@@ -83,6 +83,35 @@
       background: #20262f;    
     }
 
+    .promo-section{
+      display:flex;
+      gap:30px;
+
+    }
+    .promo-main p{
+      color:white;
+      margin-bottom:20px;
+      text-align:center;
+    }
+
+    .promo-box{
+    background-color:#20262f;
+    border: 1px solid gray;
+    border-radius: 10px;
+    text-align:center;
+    color:white;
+    width: 40%;
+     margin-bottom:30px;
+  }
+
+    .promo-box.active{
+      border: 2px solid #dbfe78;
+    }
+  .promo-box:hover{
+    border: 2px solid #dbfe78;
+  }
+
+
     .amount-options {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -109,6 +138,10 @@
     .center {
       text-align: center;
     }
+
+    button.promo-btn {
+    margin-left: 40%;
+}
     .promo-btn {
       background: none;
       border: none;
@@ -117,6 +150,7 @@
       cursor: pointer;
       margin-bottom: 20px;
       font-size: 14px;
+      text-align:center;
     }
 
     .deposit-btn {
@@ -152,6 +186,7 @@
       width: 500px;
       max-width: 500px;
       color: #fff;
+      height: 800px;
     }
 
     .method-option {
@@ -191,6 +226,15 @@
     margin-bottom: 25px;
     border: none;
     }
+
+     #myInput {
+      display: none;
+      margin-top: 10px;
+    border: 1.2px solid #dbfe78;
+    border-radius: 10px;
+    background: #20262f;
+    margin-bottom: 30px;
+    }
   </style>
 </head>
 <body>
@@ -211,15 +255,45 @@
   </div>
 
   <input type="text" id="deposit-1" class="display-input" value="$ 200" readonly>
-<!-- 
+
   <div class="amount-options">
     <button onclick="setAmount(100)">$ 100</button>
     <button onclick="setAmount(1000)">$ 1000</button>
     <button onclick="setAmount(50000)">$ 50000</button>
     <button onclick="setAmount(100000)">$ 100000</button>
-  </div> -->
+  </div>
 
-  <div class="center"> <button class="promo-btn">Promo code</button></div>
+  
+    <div class="promo-main">
+    <p>PROMOTIONS</p>
+  <div class="promo-section">
+      <div class="promo-box active">
+        <img src="#" alt="No image found">
+        <p>Used promo code:<strong> WELCOME</strong></p>
+
+      </div>
+      <div class="promo-box">
+        <img src="#" alt="No image found">
+        <p>No Promo</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="promo-btn" onclick="promocode()">Promo code</button>
+  <input type="text" id="myInput" placeholder="Promo Code" />
+
+  <script>
+    function promocode() {
+      const input = document.getElementById("myInput");
+      if (input.style.display === "none" || input.style.display === "") {
+        input.style.display = "block";
+      } else {
+        input.style.display = "none";
+      }
+    }
+  </script>
+
+  <!-- <div class="center"> <button class="promo-btn">Promo code</button></div> -->
   <button class="deposit-btn" id="depositBtn">Deposit via PayPay MEFETE</button>
 </div>
 
@@ -276,15 +350,15 @@
   }
 
 
-  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+document.querySelector('a[data-target=".fusion-modal.signup"]')?.click();
+ 
+alert("bharat");
 
-$(document).ready(function(){
-$(".button-flat").click(function(){
-$("").slideToggle(); // You can also use .fadeIn() or .show()
-});
-});
+// jQuery(document).ready(function($){
+//   $('.fusion-column-anchor').on('click', function(e) {
+//     // alert('Postcard clicked!');
+// document.querySelector('a[data-target=".fusion-modal.deposit"]')?.click(); 
 
- </script>
-
+</script>
 </body>
 </html>
